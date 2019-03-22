@@ -1,5 +1,9 @@
-import { StatusBar } from 'react-native';
+import { StatusBar, Platform } from 'react-native';
 import Colors from '../globals/Colors';
 
-StatusBar.setBackgroundColor(Colors.orange); // Android
-StatusBar.setBarStyle('light-content'); // iOS
+if (Platform.OS === 'ios') {
+  StatusBar.setBarStyle('light-content');
+}
+if (Platform.OS === 'android') {
+  StatusBar.setBackgroundColor(Colors.orange);
+}
